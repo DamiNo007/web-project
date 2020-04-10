@@ -1,0 +1,26 @@
+<form>
+    <div class="container">
+        <h1 style="color: black; font-family: cursive; text-align: center;">Log in</h1>
+        <p style="color: black; font-family: cursive; text-align: center;">Please fill in this form to enter in account.</p>
+      
+        <hr>
+        <label for="email" style="color: black; font-family: cursive;"><b>Email</b></label>
+        <input [(ngModel)] = "email" type="text" placeholder="Enter Email" name="email" required>
+  
+        <label for="psw" style="color: black; font-family: cursive;"><b>Password</b></label>
+        <input [(ngModel)] = "password" type="password" placeholder="Enter Password" name="psw" required>
+        <hr>
+  
+       <button (click) = "login()" type="submit" class="loginbtn">Log in</button>
+    </div>
+  
+    <div class="container signin" style="color: black; font-family: cursive;">
+        <div *ngIf = "userFullName">
+            <p>{{userFullName}}, don't have an account? <a [routerLink] = "['/register']">Sign up</a>.</p>
+        </div>
+        <div *ngIf = "!userFullName">
+            <p>Don't have an account? <a [routerLink] = "['/register']">Sign up</a>.</p>
+        </div>
+       
+    </div>
+</form>
